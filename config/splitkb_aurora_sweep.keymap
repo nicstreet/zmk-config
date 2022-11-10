@@ -15,7 +15,7 @@
     #define SYM 3
     #define FUN 4
     #define MAC 5
-		#define SETTINGS 6
+		#define SET 6
 // -----------------
 
 &mt {
@@ -24,6 +24,40 @@
 };
 
 / {
+
+    behaviors {
+        gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            label = "GRAVE_ESCAPE";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        sptab: space_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_TAB";
+            #binding-cells = <32>;
+            bindings = <&kp SPC>, <&kp TAB>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        bsdel: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <30>;
+            bindings = <&kp BKSP>, <&kp DEL>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        entps: enter_printscreen {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ENTER_PRINTSCREEN";
+            #binding-cells = <33>;
+            bindings = <&kp ENTER>, <&kp PSCRN>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+    };
 
     combos {
         compatible = "zmk,combos";
@@ -73,8 +107,8 @@
 
     default_layer {
 		bindings = <
-		&kp ESC &kp W &kp F &kp P &kp B  &kp J &kp L &kp U &kp Y &mo MAC
-		&kp A &kp R &kp S &kp T &kp G  &kp M &kp N &kp E &kp I &kp O
+		&kp ESC &kp W &kp F &kp P &kp B  &kp J &kp L &kp U &kp Y &sl MAC
+		&mt LCTL A &mt LALT R &lt NAV S &lt NUM T &mt LGUI G  &lt LGUI M &lt FUN N &lt SYM E &mt LALT I &mt LCTL O
     &kp Z &kp CMMA &kp C &kp D &kp V  &kp K &kp H &kp X &kp DOT &kp Q
           				&kp BKSP &kp LSFT  				&kp SPC &kp RET
 		>;
@@ -118,7 +152,7 @@
 
     mac_layer {
     bindings = <
-    &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans            &sl SET &trans &trans &trans &trans
 	  &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
 		&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
 					    &trans &trans   &trans &trans

@@ -95,6 +95,25 @@
         };
 
     behaviors {
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping_term_ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        hl: homerow_layers {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_LAYERS";
+            #binding-cells = <2>;
+            tapping_term_ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
         gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
             label = "GRAVE_ESCAPE";
@@ -220,7 +239,7 @@
     default_layer {
 		bindings = <
 		&kp ESC &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &sl MAC
-		&mt LCTL A &mt LALT R &lt NAV S &lt NUM T &mt LGUI G  &lt LGUI M &lt FUN N &lt SYM E &mt LALT I &mt LCTL O
+		&hm LCTL A &hm LALT R &hl NAV S &hl NUM T &hm LGUI G  &hm LGUI M &hl FUN N &hl SYM E &hm LALT I &hm LCTL O
     &kp Z &kp CMMA &kp C &kp D &kp V  &kp K &kp H &kp X &kp DOT &kp Q
           				&kp BKSP &kp LSFT  				&kp SPACE &kp RET
 		>;

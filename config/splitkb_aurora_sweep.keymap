@@ -25,6 +25,52 @@
 
 / {
 
+    macros {
+            macro01: macro01 {
+                label = "macro01";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap &kp SLCK>
+                    , <&macro_tap &kp SLCK>
+                    , <&macro_tap &kp 1>
+                    ;
+            };
+
+            macro02: macro02 {
+                label = "macro02";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap &kp SLCK>
+                    , <&macro_tap &kp SLCK>
+                    , <&macro_tap &kp 2>
+                    ;
+            };
+
+            macro03: macro03 {
+                label = "macro03";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap &kp SLCK>
+                    , <&macro_tap &kp SLCK>
+                    , <&macro_tap &kp 3>
+                    ;
+            };
+
+            macro04: macro04 {
+                label = "macro04";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap &kp SLCK>
+                    , <&macro_tap &kp SLCK>
+                    , <&macro_tap &kp 4>
+                    ;
+            };
+        };
+
     behaviors {
         gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
@@ -152,7 +198,7 @@
 
     mac_layer {
     bindings = <
-    &trans &trans &trans &trans &trans            &sl SET &trans &trans &trans &trans
+    &macro01 &macro02 &macro03 &macro04 &trans    &sl SET &trans &trans &trans &trans
 	  &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
 		&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
 					    &trans &trans   &trans &trans

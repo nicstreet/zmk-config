@@ -123,7 +123,7 @@
             label = "GRAVE_ESCAPE";
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp GRAVE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
         sptab: space_tab {
@@ -131,7 +131,7 @@
             label = "SPACE_TAB";
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp TAB>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
         bsdel: backspace_delete {
@@ -139,7 +139,7 @@
             label = "BACKSPACE_DELETE";
             #binding-cells = <0>;
             bindings = <&kp BKSP>, <&kp DEL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
         entps: enter_printscreen {
@@ -147,7 +147,7 @@
             label = "ENTER_PRINTSCREEN";
             #binding-cells = <0>;
             bindings = <&kp ENTER>, <&kp PSCRN>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
         comsc: comma_semicolon {
@@ -155,7 +155,7 @@
             label = "COMMA_SEMICOLON";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
         dotco: dot_colon {
@@ -163,7 +163,7 @@
             label = "DOT_COLON";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
     };
 

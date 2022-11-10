@@ -37,7 +37,7 @@
         sptab: space_tab {
             compatible = "zmk,behavior-mod-morph";
             label = "SPACE_TAB";
-            #binding-cells = <32>;
+            #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp TAB>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -45,7 +45,7 @@
         bsdel: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_DELETE";
-            #binding-cells = <30>;
+            #binding-cells = <0>;
             bindings = <&kp BKSP>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -53,7 +53,7 @@
         entps: enter_printscreen {
             compatible = "zmk,behavior-mod-morph";
             label = "ENTER_PRINTSCREEN";
-            #binding-cells = <33>;
+            #binding-cells = <0>;
             bindings = <&kp ENTER>, <&kp PSCRN>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };

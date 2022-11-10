@@ -155,10 +155,52 @@
             bindings = <&kp LC(V)>;
         };
 
-        combo_cut {
+        combo_selectall {
             timeout-ms = <50>;
             key-positions = <0 10>;
             bindings = <&kp LC(A)>;
+        };
+
+        combo_backslash {
+            timeout-ms = <50>;
+            key-positions = <10 20>;
+            bindings = <&kp BSLH>;
+        };
+
+        combo_forwardslash {
+            timeout-ms = <50>;
+            key-positions = <19 29>;
+            bindings = <&kp FSLH>;
+        };
+
+        combo_undo {
+            timeout-ms = <50>;
+            key-positions = <13 23>;
+            bindings = <&kp LC(Z)>;
+        };
+
+        combo_redo {
+            timeout-ms = <50>;
+            key-positions = <12 22>;
+            bindings = <&kp LC(Y)>;
+        };
+
+        combo_quote {
+            timeout-ms = <50>;
+            key-positions = <6 16>;
+            bindings = <&kp SQT>;
+        };
+
+        combo_exclamation {
+            timeout-ms = <50>;
+            key-positions = <7 17>;
+            bindings = <&kp EXCL>;
+        };
+
+        combo_at {
+            timeout-ms = <50>;
+            key-positions = <8 18>;
+            bindings = <&kp AT>;
         };
     };
 

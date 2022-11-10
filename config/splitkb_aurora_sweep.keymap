@@ -35,7 +35,7 @@
                 bindings
                     = <&macro_tap &kp SLCK>
                     , <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp N1>
+                    , <&macro_tap &kp KP_N1>
                     ;
             };
 
@@ -48,7 +48,7 @@
                 bindings
                     = <&macro_tap &kp SLCK>
                     , <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp N2>
+                    , <&macro_tap &kp KP_N2>
                     ;
             };
 
@@ -61,7 +61,7 @@
                 bindings
                     = <&macro_tap &kp SLCK>
                     , <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp N3>
+                    , <&macro_tap &kp KP_N3>
                     ;
             };
 
@@ -74,7 +74,7 @@
                 bindings
                     = <&macro_tap &kp SLCK>
                     , <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp N4>
+                    , <&macro_tap &kp KP_N4>
                     ;
             };
 
@@ -100,7 +100,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping_term_ms = <150>;
+            tapping_term_ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -109,7 +111,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS";
             #binding-cells = <2>;
-            tapping_term_ms = <150>;
+            tapping_term_ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };

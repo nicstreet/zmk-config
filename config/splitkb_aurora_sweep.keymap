@@ -75,7 +75,7 @@
 		bindings = <
 		&kp ESC &kp W &kp F &kp P &kp B  &kp J &kp L &kp U &kp Y &mo MAC
 		&kp A &kp R &kp S &kp T &kp G  &kp M &kp N &kp E &kp I &kp O
-    &kp Z &kp CMMA &kp C &kp D &kp V  &kp K &kp H &kp X &kp DOT &kt Q
+    &kp Z &kp CMMA &kp C &kp D &kp V  &kp K &kp H &kp X &kp DOT &kp Q
           				&kp BKSP &kp LSFT  				&kp SPC &kp RET
 		>;
 		};
@@ -83,7 +83,7 @@
     nav_layer {
 		bindings = <
 		&trans &trans &trans &kp PG_UP &trans		&trans &kp HOME &kp UP &kp END &trans
-		&trans &trans &trans &kp PG_DN &trans 	&trans &kp LEFT &KP DOWN &kp RIGHT &trans
+		&trans &trans &trans &kp PG_DN &trans 	&trans &kp LEFT &kp DOWN &kp RIGHT &trans
 		&trans &trans &trans &trans &trans     	&trans &trans &trans &trans &trans
 					  &trans &trans    &trans &trans
 		>;

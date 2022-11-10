@@ -69,6 +69,19 @@
                     , <&macro_tap &kp 4>
                     ;
             };
+
+            macro05: macro05 {
+                label = "macro05";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp LSHFT>
+                    , <&kp M>
+                    , <&macro_release &kp LSHFT>
+                    , <&kp O &kp V &kp E &kp M &kp E &kp N &kp T>
+                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
+                    ;
+            };
         };
 
     behaviors {
@@ -103,49 +116,50 @@
             bindings = <&kp ENTER>, <&kp PSCRN>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        comsc: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_SEMICOLON";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dotco: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_COLON";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
-        combo_esc {
+
+        combo_cut {
             timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
+            key-positions = <1 11>;
+            bindings = <&kp LC(X)>;
         };
 
-         combo_tab {
+        combo_copy {
             timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
+            key-positions = <1 12>;
+            bindings = <&kp LC(C)>;
         };
 
-            combo_ralt {
+        combo_paste {
             timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
+            key-positions = <3 13>;
+            bindings = <&kp LC(V)>;
         };
 
-                    combo_lalt {
+        combo_cut {
             timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
+            key-positions = <0 10>;
+            bindings = <&kp LC(A)>;
         };
-
-                           combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LGUI>;
-        };
-
-
-       combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
-        };
-
-
-
     };
 
         keymap {
@@ -199,7 +213,7 @@
     mac_layer {
     bindings = <
     &macro01 &macro02 &macro03 &macro04 &trans    &sl SET &trans &trans &trans &trans
-	  &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
+	  &macro05 &trans &trans &trans &trans          &trans &trans &trans &trans &trans
 		&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
 					    &trans &trans   &trans &trans
     >;

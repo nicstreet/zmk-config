@@ -28,7 +28,6 @@
 // Macro definitions
     #define MACRO(NAME, BINDINGS) \
       macro_##NAME { \
-        label = <NAME>; \
         bindings = <BINDINGS>; \
         wait-ms = <40>; \
         tap-ms = <40>; \
@@ -38,7 +37,7 @@
     compatible = "zmk,behavior-macro";
     MACRO(macro01, &kp M)
     };
-
+// -----------------
             /*
     macros {
             kvm01: kvm01 {

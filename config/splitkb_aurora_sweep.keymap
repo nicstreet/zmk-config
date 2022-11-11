@@ -108,7 +108,7 @@
 
     macros {
       compatible = "zmk,behavior-macro";
-      MACRO(kvm01,   &kp SLCK &kp SLCK &kp KP_N1)
+      MACRO(kvm01,   &kp KP_N1)
       MACRO(kvm02,   &kp SLCK &kp SLCK &kp KP_N2)
       MACRO(kvm03,   &kp SLCK &kp SLCK &kp KP_N3)
       MACRO(kvm04,   &kp SLCK &kp SLCK &kp KP_N4)

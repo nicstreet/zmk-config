@@ -99,8 +99,8 @@
 };
 
     #define MACRO(NAME, BINDINGS) \
-        name: NAME { \
-        label = ZMK_HELPER_STRINGIFY(ZB_ ## NAME); \
+        name: <NAME> { \
+        label = <NAME>; \
         compatible = "zmk,behavior-macro"; \
         #binding-cells = <0>; \
         bindings = <BINDINGS>; \

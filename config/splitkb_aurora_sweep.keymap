@@ -235,6 +235,12 @@
             key-positions = <8 18>;
             bindings = <&kp AT>;
         };
+
+        combo_underscore {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp MINUS>;
+        };
     };
 
         keymap {
@@ -243,11 +249,11 @@
     default_layer {
 		bindings = <
     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp ESC       &kp W         &kp F         &kp P         &kp B                &kp J         &kp L         &kp U         &kp Y         &sl MAC
+         &gresc        &kp W         &kp F         &kp P         &kp B                &kp J         &kp L         &kp U         &kp Y         &sl MAC
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &hm LCTL A    &hm LALT R    &lt NAV S     &lt NUM T     &hm LGUI G           &hm LGUI M    &lt FUN N     &lt SYM E     &hm LALT I    &hm LCTL O
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp Z         &mt CMMA SEMI &kp C         &kp D         &kp V                &kp K         &kp H         &kp X         &mt DOT COLON &kp Q
+         &kp Z         &mt SEMI CMMA &kp C         &kp D         &kp V                &kp K         &kp H         &kp X         &mt COLON DOT &kp Q
     // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
           				                                 &kp BKSP      &kp LSFT             &kp SPACE     &kp RET
     //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
@@ -270,46 +276,71 @@
 
 		num_layer {
 		bindings = <
-    &trans &kp CARET &kp ASTRK &kp PLUS &trans		&kp PERCENT &kp N7 &kp N8 &kp N9 &trans
-		&trans &trans &kp FSLH &trans &kp EQUAL	      &kp DOT &kp N4 &kp N5 &kp N6 &kp N0
-		&trans &trans &trans &kp MINUS &trans       	&kp NUBS &kp N1 &kp N2 &kp N3 &kp NUBS
-					  &trans &trans    &trans &trans
-		>;
+    // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+         &trans        &kp CARET     &kp ASTRK     &kp PLUS      &trans		            &kp PERCENT   &kp N7        &kp N8        &kp N9        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+         &trans        &trans        &kp FSLH      &trans        &kp EQUAL	          &kp DOT       &kp N4        &kp N5        &kp N6        &kp N0
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+         &trans        &trans        &trans        &kp MINUS     &trans       	      &kp NUBS      &kp N1        &kp N2        &kp N3        &kp NUBS
+    // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+    			                                         &trans        &trans               &trans        &trans
+    //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
+    >;
 		};
 
 		sym_layer {
 		bindings = <
-    &trans &kp TILDE &kp LBRC &kp RBRC &trans	  	&trans &trans &trans &trans &trans
-		&trans &kp HASH &kp LPAR &kp RPAR &trans 	    &trans &trans &trans &trans &trans
-		&trans &kp DLLR &kp LBRC &kp RBRC &trans 	    &trans &trans &trans &trans &trans
-					  &trans &trans    &trans &trans
-		>;
+    // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+         &trans        &kp TILDE     &kp LBRC      &kp RBRC      &trans	  	          &trans        &trans        &trans        &trans        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+         &trans        &kp HASH      &kp LPAR      &kp RPAR      &trans 	            &trans        &trans        &trans        &trans        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+         &trans        &kp DLLR      &kp LBRC      &kp RBRC      &trans 	            &trans        &trans        &trans        &trans        &trans
+    // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+    			                                         &trans        &trans               &trans        &trans
+    //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
+    >;
 		};
 
     fun_layer {
     bindings = <
-    &kp F1 &kp F2 &kp F3 &kp F4 &kp KP_NLCK       &trans &trans &trans &trans &trans
-		&kp F5 &kp F6 &kp F7 &kp F8 &kp CAPS  	      &trans &trans &trans &trans &trans
-		&kp F9 &kp F10 &kp F11 &kp F12 &kp SLCK       &trans &trans &trans &trans &trans
-				    &trans &trans   &trans &trans
+    // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+         &kp F1        &kp F2        &kp F3        &kp F4        &kp KP_NLCK          &trans        &trans        &trans        &trans        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+         &kp F5        &kp F6        &kp F7        &kp F8        &kp CAPS  	          &trans        &trans        &trans        &trans        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+         &kp F9        &kp F10       &kp F11       &kp F12       &kp SLCK             &trans        &trans        &trans        &trans        &trans
+    // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                                   &trans        &trans               &trans        &trans
+    //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
     >;
     };
 
     mac_layer {
     bindings = <
-    &macro01 &macro02 &macro03 &macro04 &trans    &sl SET &trans &trans &trans &trans
-	  &macro05 &trans &trans &trans &trans          &trans &trans &trans &trans &trans
-		&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
-					    &trans &trans   &trans &trans
+    // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+         &macro01      &macro02      &macro03      &macro04      &trans               &sl SET       &trans        &trans        &trans        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+	       &macro05      &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+		     &trans        &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+    // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+					                                         &trans        &trans               &trans        &trans
+    //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
     >;
     };
 
     settings_layer {
     bindings = <
-    &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
-	  &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
-		&trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans
-					    &trans &trans   &trans &trans
+    // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+         &trans        &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+	       &trans        &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+		     &trans        &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+    // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+					                                         &trans        &trans               &trans        &trans
+    //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
     >;
     };
 

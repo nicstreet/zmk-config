@@ -25,34 +25,6 @@
 
 / {
 
-// Macro definitions
-    #define MACRO(NAME, BINDINGS) \
-      macro_##NAME { \
-        bindings = <BINDINGS>; \
-        label = <NAME>; \
-        wait-ms = <40>; \
-        tap-ms = <40>; \
-      };
-
-    macros {
-      compatible = "zmk,behavior-macro";
-      MACRO(kvm01,   &kp SLCK &kp SLCK &kp KP_N1)
-      MACRO(kvm02,   &kp SLCK &kp SLCK &kp KP_N2)
-      MACRO(kvm03,   &kp SLCK &kp SLCK &kp KP_N3)
-      MACRO(kvm04,   &kp SLCK &kp SLCK &kp KP_N4)
-      MACRO(macro01, &kp LS(M) &kp O)
-      MACRO(macro02, &kp LS(M) &kp O)
-      MACRO(macro03, &kp LS(M) &kp O)
-      MACRO(macro04, &kp LS(M) &kp O)
-      MACRO(macro05, &kp LS(M) &kp O)
-      MACRO(macro06, &kp LS(M) &kp O)
-      MACRO(macro07, &kp LS(M) &kp O)
-      MACRO(macro08, &kp LS(M) &kp O)
-      MACRO(macro09, &kp LS(M) &kp O)
-      MACRO(macro10, &kp LS(M) &kp O)
-    };
-// -----------------
-
     behaviors {
 
         hm: homerow_mods {
@@ -124,6 +96,32 @@
             bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT)>;
         };
+    };
+
+    #define MACRO(NAME, BINDINGS) \
+      macro_##NAME { \
+        bindings = <BINDINGS>; \
+        label = <NAME>; \
+        wait-ms = <40>; \
+        tap-ms = <40>; \
+      };
+
+    macros {
+      compatible = "zmk,behavior-macro";
+      MACRO(kvm01,   &kp SLCK &kp SLCK &kp KP_N1)
+      MACRO(kvm02,   &kp SLCK &kp SLCK &kp KP_N2)
+      MACRO(kvm03,   &kp SLCK &kp SLCK &kp KP_N3)
+      MACRO(kvm04,   &kp SLCK &kp SLCK &kp KP_N4)
+      MACRO(macro01, &kp LS(M) &kp O)
+      MACRO(macro02, &kp LS(M) &kp O)
+      MACRO(macro03, &kp LS(M) &kp O)
+      MACRO(macro04, &kp LS(M) &kp O)
+      MACRO(macro05, &kp LS(M) &kp O)
+      MACRO(macro06, &kp LS(M) &kp O)
+      MACRO(macro07, &kp LS(M) &kp O)
+      MACRO(macro08, &kp LS(M) &kp O)
+      MACRO(macro09, &kp LS(M) &kp O)
+      MACRO(macro10, &kp LS(M) &kp O)
     };
 
     #define COMBO(NAME, BINDINGS, KEYPOS) \

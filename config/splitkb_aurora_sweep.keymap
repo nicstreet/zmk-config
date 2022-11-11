@@ -19,11 +19,9 @@
 // -----------------
 
 &mt {
-  //  flavor = "tap-preferred";
-   // tapping_term_ms = <200>;
+    // flavor = "tap-preferred";
+    // tapping_term_ms = <200>;
 };
-
-/ {
 
     behaviors {
 
@@ -100,6 +98,7 @@
 
     #define MACRO(NAME, BINDINGS) \
         name: NAME##_macro { \
+        compatible = "zmk,behavior-macro";
         bindings = <BINDINGS>; \
         label = <NAME>; \
         wait-ms = <40>; \
@@ -107,7 +106,6 @@
       };
 
     macros {
-      compatible = "zmk,behavior-macro";
       MACRO(kvm01,   &kp KP_N1)
       MACRO(kvm02,   &kp SLCK &kp SLCK &kp KP_N2)
       MACRO(kvm03,   &kp SLCK &kp SLCK &kp KP_N3)
@@ -133,19 +131,19 @@
       };
 
     combos {
-    compatible = "zmk,combos";
-    COMBO(combo_cut,           &kp LC(X),    1 11)
-    COMBO(combo_copy,          &kp LC(C),    2 12)
-    COMBO(combo_paste,         &kp LC(V),    3 13)
-    COMBO(combo_selectall,     &kp LC(A),    0 10)
-    COMBO(combo_backslash,     &kp BSLH,     10 20)
-    COMBO(combo_forwardslash,  &kp FSLH,     19 29)
-    COMBO(combo_undo,          &kp LC(Z),    13 23)
-    COMBO(combo_redo,          &kp LC(Y),    12 22)
-    COMBO(combo_quote,         &kp SQT,      6 16)
-    COMBO(combo_exclamation,   &kp EXCL,     7 17)
-    COMBO(combo_at,            &kp AT,       8 18)
-    COMBO(combo_underscore,    &kp MINUS,    16 17)
+      compatible = "zmk,combos";
+      COMBO(combo_cut,           &kp LC(X),    1 11)
+      COMBO(combo_copy,          &kp LC(C),    2 12)
+      COMBO(combo_paste,         &kp LC(V),    3 13)
+      COMBO(combo_selectall,     &kp LC(A),    0 10)
+      COMBO(combo_backslash,     &kp BSLH,     10 20)
+      COMBO(combo_forwardslash,  &kp FSLH,     19 29)
+      COMBO(combo_undo,          &kp LC(Z),    13 23)
+      COMBO(combo_redo,          &kp LC(Y),    12 22)
+      COMBO(combo_quote,         &kp SQT,      6 16)
+      COMBO(combo_exclamation,   &kp EXCL,     7 17)
+      COMBO(combo_at,            &kp AT,       8 18)
+      COMBO(combo_underscore,    &kp MINUS,    16 17)
     };
 
         keymap {

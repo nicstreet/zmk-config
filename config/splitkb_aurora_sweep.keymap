@@ -99,7 +99,7 @@
 };
 
     #define MACRO(NAME, BINDINGS) \
-        name: NAME##_macro { \
+        name: NAME## { \
         label = #NAME; \
         compatible = "zmk,behavior-macro"; \
         #binding-cells = <0>; \

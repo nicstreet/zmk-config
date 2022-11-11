@@ -26,8 +26,8 @@
 / {
 
     macros {
-            macro01: macro01 {
-                label = "macro01";
+            kvm01: kvm01 {
+                label = "kvm01";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 wait-ms = <40>;
@@ -39,8 +39,8 @@
                     ;
             };
 
-            macro02: macro02 {
-                label = "macro02";
+            kvm02: kvm02 {
+                label = "kvm02";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 wait-ms = <40>;
@@ -52,8 +52,8 @@
                     ;
             };
 
-            macro03: macro03 {
-                label = "macro03";
+            kvm03: kvm03 {
+                label = "kvm03";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 wait-ms = <40>;
@@ -65,8 +65,8 @@
                     ;
             };
 
-            macro04: macro04 {
-                label = "macro04";
+            kvm04: kvm04 {
+                label = "kvm04";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 wait-ms = <40>;
@@ -164,6 +164,23 @@
         };
     };
 
+    #define COMBO(NAME, BINDINGS, KEYPOS) \
+      combo_##NAME { \
+        timeout-ms = <50>; \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <0>; \
+      };
+
+    combos {
+    compatible = "zmk,combos";
+
+    COMBO(combo_cut, &kp LC(X), 1 11)
+    COMBO(combo_copy, &kp LC(C), 2 12)
+
+    };
+
+/*
     combos {
         compatible = "zmk,combos";
 
@@ -175,7 +192,7 @@
 
         combo_copy {
             timeout-ms = <50>;
-            key-positions = <1 12>;
+            key-positions = <2 12>;
             bindings = <&kp LC(C)>;
         };
 
@@ -238,6 +255,7 @@
             key-positions = <16 17>;
             bindings = <&kp MINUS>;
         };
+        */
     };
 
         keymap {
@@ -316,11 +334,11 @@
     mac_layer {
     bindings = <
     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &macro01      &macro02      &macro03      &macro04      &trans               &sl SET       &trans        &trans        &trans        &trans
+         &kvm01        &kvm02        &kvm03        &kvm04        &trans               &sl SET       &trans        &trans        &trans        &trans
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-	       &macro05      &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+	       &macro01      &macro02      &macro03      &macro04      &macro05              &trans        &trans        &trans        &trans        &trans
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-		     &trans        &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+		     &macro06      &macro07      &macro08      &macro09      &macro010             &trans        &trans        &trans        &trans        &trans
     // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 					                                         &trans        &trans               &trans        &trans
     //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯

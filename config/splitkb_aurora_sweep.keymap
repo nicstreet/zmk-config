@@ -98,34 +98,20 @@
     };
 };
 
-    #define MACRO(NAME, BINDINGS) \
-        name: <NAME> { \
-        label = <NAME>; \
-        compatible = "zmk,behavior-macro"; \
-        #binding-cells = <0>; \
-        bindings = <BINDINGS>; \
-        wait-ms = <40>; \
-        tap-ms = <40>; \
-      };
-
-/ {
-    macros {
-      MACRO(kvm01,   &kp KP_N1)
-      MACRO(kvm02,   &kp SLCK &kp SLCK &kp KP_N2)
-      MACRO(kvm03,   &kp SLCK &kp SLCK &kp KP_N3)
-      MACRO(kvm04,   &kp SLCK &kp SLCK &kp KP_N4)
-      MACRO(macro01, &kp LS(M) &kp O)
-      MACRO(macro02, &kp LS(M) &kp O)
-      MACRO(macro03, &kp LS(M) &kp O)
-      MACRO(macro04, &kp LS(M) &kp O)
-      MACRO(macro05, &kp LS(M) &kp O)
-      MACRO(macro06, &kp LS(M) &kp O)
-      MACRO(macro07, &kp LS(M) &kp O)
-      MACRO(macro08, &kp LS(M) &kp O)
-      MACRO(macro09, &kp LS(M) &kp O)
-      MACRO(macro10, &kp LS(M) &kp O)
-    };
-};
+ZMK_MACRO(kvm01,   wait-ms = <30>; tap-ms = <40>; bindings = <&kp SLCK &kp SLCK &kp KP_N1>; )
+ZMK_MACRO(kvm02,   wait-ms = <30>; tap-ms = <40>; bindings = <&kp SLCK &kp SLCK &kp KP_N2>; )
+ZMK_MACRO(kvm03,   wait-ms = <30>; tap-ms = <40>; bindings = <&kp SLCK &kp SLCK &kp KP_N3>; )
+ZMK_MACRO(kvm04,   wait-ms = <30>; tap-ms = <40>; bindings = <&kp SLCK &kp SLCK &kp KP_N4>; )
+ZMK_MACRO(macro01, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro02, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro03, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro04, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro05, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro06, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro07, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro08, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro09, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
+ZMK_MACRO(macro10, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LS(M) &kp O>; )
 
     #define COMBO(NAME, BINDINGS, KEYPOS) \
       combo_##NAME { \

@@ -100,9 +100,10 @@
 
     #define MACRO(NAME, BINDINGS) \
         name: NAME##_macro { \
+        label = #NAME; \
         compatible = "zmk,behavior-macro"; \
+        #binding-cells = <0>; \
         bindings = <BINDINGS>; \
-        label = <NAME>; \
         wait-ms = <40>; \
         tap-ms = <40>; \
       };

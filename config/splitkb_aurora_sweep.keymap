@@ -255,8 +255,8 @@
             key-positions = <16 17>;
             bindings = <&kp MINUS>;
         };
-        */
     };
+    */
 
         keymap {
                 compatible = "zmk,keymap";

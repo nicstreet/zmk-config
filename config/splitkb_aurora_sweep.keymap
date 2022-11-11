@@ -34,185 +34,23 @@
       };
 
     macros {
-    compatible = "zmk,behavior-macro";
-    MACRO(macro01, &kp LS(M) &kp O)
+      compatible = "zmk,behavior-macro";
+      MACRO(kvm01,   &kp SLCK &kp SLCK &kp KP_N1)
+      MACRO(kvm02,   &kp SLCK &kp SLCK &kp KP_N2)
+      MACRO(kvm03,   &kp SLCK &kp SLCK &kp KP_N3)
+      MACRO(kvm04,   &kp SLCK &kp SLCK &kp KP_N4)
+      MACRO(macro01, &kp LS(M) &kp O)
+      MACRO(macro02, &kp LS(M) &kp O)
+      MACRO(macro03, &kp LS(M) &kp O)
+      MACRO(macro04, &kp LS(M) &kp O)
+      MACRO(macro05, &kp LS(M) &kp O)
+      MACRO(macro06, &kp LS(M) &kp O)
+      MACRO(macro07, &kp LS(M) &kp O)
+      MACRO(macro08, &kp LS(M) &kp O)
+      MACRO(macro09, &kp LS(M) &kp O)
+      MACRO(macro10, &kp LS(M) &kp O)
     };
 // -----------------
-            /*
-    macros {
-            kvm01: kvm01 {
-                label = "kvm01";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp KP_N1>
-                    ;
-            };
-
-            kvm02: kvm02 {
-                label = "kvm02";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp KP_N2>
-                    ;
-            };
-
-            kvm03: kvm03 {
-                label = "kvm03";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp KP_N3>
-                    ;
-            };
-
-            kvm04: kvm04 {
-                label = "kvm04";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp SLCK>
-                    , <&macro_tap &kp KP_N4>
-                    ;
-            };
-
-                macro01: macro01 {
-                label = "macro01";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro02: macro02 {
-                label = "macro02";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro03: macro03 {
-                label = "macro03";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro04: macro04 {
-                label = "macro04";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro05: macro05 {
-                label = "macro05";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro06: macro06 {
-                label = "macro06";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro07: macro07 {
-                label = "macro07";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro08: macro08 {
-                label = "macro08";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro09: macro09 {
-                label = "macro09";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-
-            macro010: macro010 {
-                label = "macro010";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <40>;
-                tap-ms = <40>;
-                bindings
-                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
-                    , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
-                    ;
-            };
-        };
-   */
 
     behaviors {
 
@@ -389,9 +227,9 @@
     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
          &kvm01        &kvm02        &kvm03        &kvm04        &trans               &sl SET       &trans        &trans        &trans        &trans
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-	       &macro01      &macro02      &macro03      &macro04      &macro05              &trans        &trans        &trans        &trans        &trans
+	       &macro01      &macro02      &macro03      &macro04      &macro05             &trans        &trans        &trans        &trans        &trans
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-		     &macro06      &macro07      &macro08      &macro09      &macro010             &trans        &trans        &trans        &trans        &trans
+		     &macro06      &macro07      &macro08      &macro09      &macro10             &trans        &trans        &trans        &trans        &trans
     // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 					                                         &trans        &trans               &trans        &trans
     //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
@@ -411,6 +249,5 @@
     //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
     >;
     };
-
 	};
 };

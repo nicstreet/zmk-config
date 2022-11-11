@@ -261,11 +261,11 @@ macros {
       mac_layer {
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-           &kvm01        &kvm02        &kvm03        &kvm04        &trans               &sl SET       &trans        &trans        &trans        &trans
+           &kvm01        &kvm02        &kvm03        &kvm04        &sl SET              &rgb_ug RGB_EFF       &rgb_ug RGB_SPI     &rgb_ug RGB_BRI     &rgb_ug RGB_SAI      &rgb_ug RGB_HUI
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  	       &macro01      &macro02      &macro03      &macro04      &macro05             &trans        &trans        &trans        &trans        &trans
+  	       &macro01      &macro02      &macro03      &macro04      &macro05             &rgb_ug RGB_EFR      &rgb_ug RGB_SPD      &rgb_ug RGB_BRD      &rgb_ug RGB_SAD      &rgb_ug RGB_HUD
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  		     &macro06      &macro07      &macro08      &macro09      &macro10             &trans        &trans        &trans        &trans        &trans
+  		     &macro06      &macro07      &macro08      &macro09      &macro10             &trans       &rgb_ug RGB_ON       &rgb_ug RGB_OFF      &rgb_ug RGB_TOG       &trans
       // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
   					                                         &trans        &trans               &trans        &trans
       //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯

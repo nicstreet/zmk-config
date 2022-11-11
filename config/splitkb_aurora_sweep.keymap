@@ -100,7 +100,7 @@
 
     #define MACRO(NAME, BINDINGS) \
         name: NAME##_macro { \
-        compatible = "zmk,behavior-macro";
+        compatible = "zmk,behavior-macro"; \
         bindings = <BINDINGS>; \
         label = <NAME>; \
         wait-ms = <40>; \

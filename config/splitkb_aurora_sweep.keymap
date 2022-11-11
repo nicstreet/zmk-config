@@ -28,7 +28,6 @@
 // Macro definitions
     #define MACRO(NAME, BINDINGS) \
       MACRO_##NAME { \
-        compatible = "zmk,behavior-mod-morph"; \
         label = <NAME>; \
         bindings = <BINDINGS>; \
         wait-ms = <40>; \
@@ -36,7 +35,7 @@
       };
 
     macros {
-    compatible = "zmk,combos";
+    compatible = "zmk,behavior-macro";
     MACRO(macro01,  &kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T &kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL)
     };
 

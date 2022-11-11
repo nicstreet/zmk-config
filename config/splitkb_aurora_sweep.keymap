@@ -25,6 +25,21 @@
 
 / {
 
+// Macro definitions
+    #define MACRO(NAME, BINDINGS) \
+      MACRO_##NAME { \
+        compatible = "zmk,behavior-mod-morph"; \
+        label = <NAME>; \
+        bindings = <BINDINGS>; \
+        wait-ms = <40>; \
+        tap-ms = <40>; \
+      };
+
+    macros {
+    compatible = "zmk,combos";
+    MACRO(macro01,  &kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T &kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL)
+    };
+
     macros {
             kvm01: kvm01 {
                 label = "kvm01";
@@ -78,7 +93,8 @@
                     ;
             };
 
-            macro01: macro01 {
+            /*
+                macro01: macro01 {
                 label = "macro01";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -89,7 +105,7 @@
                     , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
                     ;
             };
-
+             */
             macro02: macro02 {
                 label = "macro02";
                 compatible = "zmk,behavior-macro";

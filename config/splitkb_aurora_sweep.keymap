@@ -85,10 +85,7 @@
                 wait-ms = <40>;
                 tap-ms = <40>;
                 bindings
-                    = <&macro_press &kp LSHFT>
-                    , <&kp M>
-                    , <&macro_release &kp LSHFT>
-                    , <&kp O &kp V &kp E &kp M &kp E &kp N &kp T>
+                    = <&kp LS(M) &kp O &kp V &kp E &kp M &kp E &kp N &kp T>
                     , <&kp N1 &kp N9 &kp N8 &kp N1 &kp EXCL &kp EXCL &kp EXCL>
                     ;
             };
@@ -253,9 +250,9 @@
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &hm LCTL A    &hm LALT R    &lt NAV S     &lt NUM T     &hm LGUI G           &hm LGUI M    &lt FUN N     &lt SYM E     &hm LALT I    &hm LCTL O
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp Z         &mt SEMI CMMA &kp C         &kp D         &kp V                &kp K         &kp H         &kp X         &mt COLON DOT &kp Q
+         &kp Z         &comsc        &kp C         &kp D         &kp V                &kp K         &kp H         &kp X         &dotco        &kp Q
     // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-          				                                 &kp BKSP      &kp LSFT             &kp SPACE     &kp RET
+          				                                 &bsdel        &kp LSFT             &sptab        &entps
     //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
     >;
 		};

@@ -99,7 +99,7 @@
     };
 
     #define MACRO(NAME, BINDINGS) \
-      macro_##NAME { \
+      ##NAME { \
         bindings = <BINDINGS>; \
         label = <NAME>; \
         wait-ms = <40>; \

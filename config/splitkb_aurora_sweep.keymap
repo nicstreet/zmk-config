@@ -35,7 +35,7 @@
 
     macros {
     compatible = "zmk,behavior-macro";
-    MACRO(macro01, &kp M)
+    MACRO(macro01, &kp LS(M) &kp O)
     };
 // -----------------
             /*

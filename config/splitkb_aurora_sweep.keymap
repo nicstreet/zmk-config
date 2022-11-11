@@ -104,7 +104,7 @@
     wait-ms = <0>; \
     tap-ms = <0>; \
     bindings = <BINDINGS>; \
-};
+    )
 
 / {
 macros {

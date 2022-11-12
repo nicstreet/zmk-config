@@ -137,10 +137,10 @@
 
 / {
 macros {
-  MACRO(kvm01,   &kp SLCK <&macro_wait_time 100> &kp SLCK <&macro_wait_time 100> &kp N1)
-  MACRO(kvm02,   &kp SLCK <&macro_wait_time 100> &kp SLCK <&macro_wait_time 100> &kp N2)
-  MACRO(kvm03,   &kp SLCK <&macro_wait_time 100> &kp SLCK <&macro_wait_time 100> &kp N3)
-  MACRO(kvm04,   &kp SLCK <&macro_wait_time 100> &kp SLCK <&macro_wait_time 100> &kp N4)
+  MACRO(kvm01,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N1)
+  MACRO(kvm02,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N2)
+  MACRO(kvm03,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N3)
+  MACRO(kvm04,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N4)
   MACRO(macro01, &kp LS(M) &kp O)
   MACRO(macro02, &kp LS(M) &kp O)
   MACRO(macro03, &kp LS(M) &kp O)

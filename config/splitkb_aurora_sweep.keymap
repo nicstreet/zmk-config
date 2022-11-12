@@ -24,11 +24,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
-/*
-#include <dt-bindings/zmk/backlight.h>
-#include <dt-bindings/zmk/rgb.h>
-*/
-
 // Layer definitions
     #define BASE 0
     #define NAV 1
@@ -142,10 +137,10 @@
 
 / {
 macros {
-  MACRO(kvm01,   &kp KP_N1)
-  MACRO(kvm02,   &kp SLCK &kp SLCK &kp KP_N2)
-  MACRO(kvm03,   &kp SLCK &kp SLCK &kp KP_N3)
-  MACRO(kvm04,   &kp SLCK &kp SLCK &kp KP_N4)
+  MACRO(kvm01,   &kp SLCK <&macro_wait_time 100> &kp SLCK <&macro_wait_time 100> &kp N1)
+  MACRO(kvm02,   &kp SLCK <&macro_wait_time 100> &kp SLCK <&macro_wait_time 100> &kp N2)
+  MACRO(kvm03,   &kp SLCK <&macro_wait_time 100> &kp SLCK <&macro_wait_time 100> &kp N3)
+  MACRO(kvm04,   &kp SLCK <&macro_wait_time 100> &kp SLCK <&macro_wait_time 100> &kp N4)
   MACRO(macro01, &kp LS(M) &kp O)
   MACRO(macro02, &kp LS(M) &kp O)
   MACRO(macro03, &kp LS(M) &kp O)

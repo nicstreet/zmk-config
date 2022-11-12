@@ -22,6 +22,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+include <dt-bindings/zmk/rgb.h>
 
 /*
 #include <dt-bindings/zmk/backlight.h>
@@ -261,11 +262,11 @@ macros {
       mac_layer {
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-           &kvm01        &kvm02        &kvm03        &kvm04        &sl SET              RGB_EFF       RGB_SPI       RGB_BRI       RGB_SAI       RGB_HUI
+           &kvm01        &kvm02        &kvm03        &kvm04        &sl SET              &rgb_ug RGB_EFF       &rgb_ug RGB_SPI       &rgb_ug RGB_BRI       &rgb_ug RGB_SAI       &rgb_ug RGB_HUI
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   	       &macro01      &macro02      &macro03      &macro04      &macro05             &rgb_ug RGB_EFR      &rgb_ug RGB_SPD      &rgb_ug RGB_BRD      &rgb_ug RGB_SAD      &rgb_ug RGB_HUD
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  		     &macro06      &macro07      &macro08      &macro09      &macro10             &trans       &rgb_ug RGB_ON       &rgb_ug RGB_OFF      &rgb_ug RGB_TOG       &trans
+  		     &macro06      &macro07      &macro08      &macro09      &macro10             &rgb_ug RGB_COLOR_HSB(128,100,100)  &rgb_ug RGB_ON       &rgb_ug RGB_OFF      &rgb_ug RGB_TOG       &rgb_ug RGB_COLOR_HSB(12,100,100)
       // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
   					                                         &trans        &trans               &trans        &trans
       //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯

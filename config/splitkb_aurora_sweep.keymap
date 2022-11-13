@@ -31,7 +31,28 @@
     #define SYM 3
     #define FUN 4
     #define MAC 5
-		#define SET 6
+		#define STG 6
+// -----------------
+
+// RGB Definitions
+    #define RGB_FX_UP    &rgb_ug RGB_EFF
+    #define RGB_FX_DN    &rgb_ug RGB_EFR
+    #define RGB_SP_UP    &rgb_ug RGB_SPI
+    #define RGB_SP_DN    &rgb_ug RGB_SPD
+    #define RGB_BR_UP    &rgb_ug RGB_BRI
+    #define RGB_BR_DN    &rgb_ug RGB_BRD
+    #define RGB_SA_UP    &rgb_ug RGB_SAI
+    #define RGB_SA_DN    &rgb_ug RGB_SAD
+    #define RGB_HU_UP    &rgb_ug RGB_HUI
+    #define RGB_HU_DN    &rgb_ug RGB_HUD
+    #define RGBON        &rgb_ug RGB_ON
+    #define RGBOFF       &rgb_ug RGB_OFF
+    #define RGBTOG       &rgb_ug RGB_TOG
+    #define RGB_RED      &rgb_ug RGB_COLOR_HSB(12,100,100)
+    #define RGB_PURP     &rgb_ug RGB_COLOR_HSB(191,0,230)
+    #define RGB_PINK     &rgb_ug RGB_COLOR_HSB(191,0,192)
+    #define RGB_WHIT     &rgb_ug RGB_COLOR_HSB(0,0,0)
+    #define RGB_ORAN     &rgb_ug RGB_COLOR_HSB(255,128,0)
 // -----------------
 
 &mt {
@@ -187,7 +208,7 @@ macros {
       default_layer {
   		bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-           &gresc        &kp W         &kp F         &kp P         &kp B                &kp J         &kp L         &kp U         &kp Y         &sl MAC
+           &gresc        &kp W         &kp F         &kp P         &kp B                &kp J         &kp L         &kp U         &lt STG Y         &sl MAC
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
            &hp LCTL A    &hm LALT R    &lt NAV S     &lt NUM T     &hm LGUI G           &hm LGUI M    &lt FUN N     &lt SYM E     &hm LALT I    &hp LCTL O
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -257,25 +278,25 @@ macros {
       mac_layer {
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-           &kvm01        &kvm02        &kvm03        &kvm04        &sl SET              &rgb_ug RGB_EFF       &rgb_ug RGB_SPI       &rgb_ug RGB_BRI       &rgb_ug RGB_SAI       &rgb_ug RGB_HUI
+           &kvm01        &kvm02        &kvm03        &kvm04        &trans               &trans        &trans        &trans        &trans        &trans
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  	       &macro01      &macro02      &macro03      &macro04      &macro05             &rgb_ug RGB_EFR      &rgb_ug RGB_SPD      &rgb_ug RGB_BRD      &rgb_ug RGB_SAD      &rgb_ug RGB_HUD
+  	       &macro01      &macro02      &macro03      &macro04      &macro05             &trans        &trans        &trans        &trans        &trans
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  		     &macro06      &macro07      &macro08      &macro09      &macro10             &rgb_ug RGB_COLOR_HSB(128,100,100)  &rgb_ug RGB_ON       &rgb_ug RGB_OFF      &rgb_ug RGB_TOG       &rgb_ug RGB_COLOR_HSB(12,100,100)
+  		     &macro06      &macro07      &macro08      &macro09      &macro10             &trans        &trans        &trans        &trans        &trans
       // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
   					                                         &trans        &trans               &trans        &trans
       //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯
       >;
       };
 
-      settings_layer {
+      stg_layer {
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-           &trans        &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+           &trans        &trans        &trans        &trans        &trans               RGBON         RGBTOG        RGBOFF        &trans        &trans
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  	       &trans        &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+           &trans        &trans        &trans        &trans        &trans               RGB_FX_UP     RGB_SP_DN     RGB_BR_UP     RGB_SA_UP     RGB_HU_UP
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  		     &trans        &trans        &trans        &trans        &trans               &trans        &trans        &trans        &trans        &trans
+           RGB_RED       RGB_PINK      RGB_PURP      RGB_ORAN      RGB_WHIT             RGB_FX_DN     RGB_SP_DN     RGB_BR_DN     RGB_SA_DN     RGB_HU_DN
       // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
   					                                         &trans        &trans               &trans        &trans
       //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯

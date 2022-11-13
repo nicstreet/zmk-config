@@ -7,7 +7,7 @@
  * https://joshinator.de/posts/zmk-combo-helper/ - Combo configuration
  */
 
-/*
+/* Key Positions
 ╭────┬────┬────┬────┬────╮      ╭────┬────┬────┬────┬────╮
   00   01   02   03   04          05   06   07   08   09
 ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
@@ -23,6 +23,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
+
+// Configure LEDs to include per key LED. Six underglow plus seventeen per key
+    &led_strip { chain-length = <23>; };
+// -----------------
 
 // Layer definitions
     #define BASE 0
@@ -55,25 +59,39 @@
     #define RGB_ORAN     &rgb_ug RGB_COLOR_HSB(255,128,0)
 // -----------------
 
-&mt {
-    // flavor = "tap-preferred";
-    // tapping_term_ms = <200>;
-};
-
-&led_strip { chain-length = <23>; };
-
 / {
     behaviors {
 
-        hm: homerow_mods {
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
+            tapping_term_ms = <300>;
             quick-tap-ms = <125>;
             global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <
+                           5  6  7  8  9
+           10 11 12 13    15 16 17 18 19
+                          25 26 27 28 29
+                 30 31    32 33>;
+        };
+
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT";
+            #binding-cells = <2>;
+            tapping_term_ms = <300>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <
+            0  1  2  3  4
+            10 11 12 13 14    16 17 18 19
+            20 21 22 23 24
+                     30 31    32 33>;
         };
 
         hp: homerow_mods_pinkies {
@@ -91,7 +109,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
+            tapping_term_ms = <300>;
             quick-tap-ms = <125>;
             global-quick-tap;
             flavor = "tap-preferred";
@@ -148,40 +166,40 @@
     };
 };
 
-#define MACRO(NAME, BINDINGS) \
-    ZMK_MACRO(NAME, \
-    compatible = "zmk,behavior-macro"; \
-    wait-ms = <0>; \
-    tap-ms = <0>; \
-    bindings = <BINDINGS>; \
-    )
+  #define MACRO(NAME, BINDINGS) \
+      ZMK_MACRO(NAME, \
+      compatible = "zmk,behavior-macro"; \
+      wait-ms = <0>; \
+      tap-ms = <0>; \
+      bindings = <BINDINGS>; \
+      )
 
 / {
-macros {
-  MACRO(kvm01,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N1)
-  MACRO(kvm02,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N2)
-  MACRO(kvm03,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N3)
-  MACRO(kvm04,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N4)
-  MACRO(macro01, &kp LS(M) &kp O)
-  MACRO(macro02, &kp LS(M) &kp O)
-  MACRO(macro03, &kp LS(M) &kp O)
-  MACRO(macro04, &kp LS(M) &kp O)
-  MACRO(macro05, &kp LS(M) &kp O)
-  MACRO(macro06, &kp LS(M) &kp O)
-  MACRO(macro07, &kp LS(M) &kp O)
-  MACRO(macro08, &kp LS(M) &kp O)
-  MACRO(macro09, &kp LS(M) &kp O)
-  MACRO(macro10, &kp LS(M) &kp O)
-};
+    macros {
+      MACRO(kvm01,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N1)
+      MACRO(kvm02,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N2)
+      MACRO(kvm03,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N3)
+      MACRO(kvm04,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N4)
+      MACRO(macro01, &kp LS(M) &kp O)
+      MACRO(macro02, &kp LS(M) &kp O)
+      MACRO(macro03, &kp LS(M) &kp O)
+      MACRO(macro04, &kp LS(M) &kp O)
+      MACRO(macro05, &kp LS(M) &kp O)
+      MACRO(macro06, &kp LS(M) &kp O)
+      MACRO(macro07, &kp LS(M) &kp O)
+      MACRO(macro08, &kp LS(M) &kp O)
+      MACRO(macro09, &kp LS(M) &kp O)
+      MACRO(macro10, &kp LS(M) &kp O)
+    };
 };
 
-    #define COMBO(NAME, BINDINGS, KEYPOS) \
-      combo_##NAME { \
-        timeout-ms = <50>; \
-        bindings = <BINDINGS>; \
-        key-positions = <KEYPOS>; \
-        layers = <0>; \
-      };
+      #define COMBO(NAME, BINDINGS, KEYPOS) \
+        combo_##NAME { \
+          timeout-ms = <50>; \
+          bindings = <BINDINGS>; \
+          key-positions = <KEYPOS>; \
+          layers = <0>; \
+        };
 
 / {
     combos {
@@ -208,9 +226,9 @@ macros {
       default_layer {
   		bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-           &gresc        &kp W         &kp F         &kp P         &kp B                &kp J         &kp L         &kp U         &lt STG Y         &sl MAC
+           &gresc        &kp W         &kp F         &kp P         &kp B                &kp J         &kp L         &kp U         &lt STG Y     &sl MAC
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-           &hp LCTL A    &hm LALT R    &lt NAV S     &lt NUM T     &hm LGUI G           &hm LGUI M    &lt FUN N     &lt SYM E     &hm LALT I    &hp LCTL O
+           &hp LCTL A    &hml LALT R   &lt NAV S     &lt NUM T     &hm LGUI G           &hm LGUI M    &lt FUN N     &lt SYM E     &hmr LALT I   &hp LCTL O
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
            &kp Z         &comsc        &kp C         &kp D         &kp V                &kp K         &kp H         &kp X         &dotco        &kp Q
       // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯

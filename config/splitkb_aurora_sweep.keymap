@@ -59,6 +59,9 @@
     #define RGB_ORAN     &rgb_ug RGB_COLOR_HSB(255,128,0)
 // -----------------
 
+// Key Combination Definitions
+    #define CAD         &kp LC(LA(DEL))
+// -----------------
 / {
     behaviors {
 
@@ -190,6 +193,16 @@
       MACRO(macro08, &kp LS(M) &kp O)
       MACRO(macro09, &kp LS(M) &kp O)
       MACRO(macro10, &kp LS(M) &kp O)
+      MACRO(macro11, &kp LS(M) &kp O)
+      MACRO(macro12, &kp LS(M) &kp O)
+      MACRO(macro13, &kp LS(M) &kp O)
+      MACRO(macro14, &kp LS(M) &kp O)
+      MACRO(macro15, &kp LS(M) &kp O)
+      MACRO(macro16, &kp LS(M) &kp O)
+      MACRO(macro17, &kp LS(M) &kp O)
+      MACRO(macro18, &kp LS(M) &kp O)
+      MACRO(macro19, &kp LS(M) &kp O)
+      MACRO(macro20, &kp LS(M) &kp O)
     };
 };
 
@@ -296,11 +309,11 @@
       mac_layer {
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-           &kvm01        &kvm02        &kvm03        &kvm04        &trans               &trans        &trans        &trans        &trans        &trans
+           &kvm01        &kvm02        &kvm03        &kvm04        &trans               &trans        CAD           &trans        &trans        &trans
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  	       &macro01      &macro02      &macro03      &macro04      &macro05             &trans        &trans        &trans        &trans        &trans
+  	       &macro01      &macro02      &macro03      &macro04      &macro05             &macro11      &macro12      &macro13      &macro14      &macro15
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  		     &macro06      &macro07      &macro08      &macro09      &macro10             &trans        &trans        &trans        &trans        &trans
+  		     &macro06      &macro07      &macro08      &macro09      &macro10             &macro16      &macro17      &macro18      &macro19      &macro20
       // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
   					                                         &trans        &trans               &trans        &trans
       //                                           ╰─────────────┴─────────────╯      ╰─────────────┴─────────────╯

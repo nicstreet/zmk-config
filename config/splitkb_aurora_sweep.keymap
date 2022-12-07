@@ -35,7 +35,7 @@
     #define SYM 3
     #define FUN 4
     #define MAC 5
-		#define STG 6
+    #define STG 6
 // -----------------
 
 // RGB Definitions
@@ -179,8 +179,8 @@
 
 / {
     macros {
-      MACRO(kvm01,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N1)
-      MACRO(kvm02,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N2)
+      MACRO(kvm01,   &macro_press &kp SLCK &macro_wait_time 100 &macro_release &kp SLCK &macro_wait_time 20 &macro_press &kp SLCK &macro_wait_time 100 &macro_release &kp SLCK &macro_wait_time 20 &kp N1)
+      MACRO(kvm02,   &macro_press &kp SLCK &macro_wait_time 100 &macro_release &kp SLCK &macro_wait_time 20 &macro_press &kp SLCK &macro_wait_time 100 &macro_release &kp SLCK &macro_wait_time 20 &kp N2)
       MACRO(kvm03,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N3)
       MACRO(kvm04,   &kp SLCK &macro_wait_time 100 &kp SLCK &macro_wait_time 100 &kp N4)
       MACRO(macro01, &kp LS(M) &kp O)
